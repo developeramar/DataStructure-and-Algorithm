@@ -1,3 +1,4 @@
+package DSA;
 import java.util.Scanner;
 
 public class Stack_one {
@@ -24,13 +25,14 @@ public class Stack_one {
             ch = sc.nextInt();
         } while (ch == 1);
     }
-
+    
     void pop() {
         int ch2;
         do {
             if (top == -1) {
                 System.out.println("Stack is Underflow , sorry we cant proceed your request");
             } else {
+                +-
                 top = top - 1;
             }
             System.out.println("Do you want to add more data press 2--");

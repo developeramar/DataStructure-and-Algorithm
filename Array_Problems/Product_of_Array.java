@@ -25,8 +25,8 @@ public class Product_of_Array {
     }
 
     public static void main(String[] args) {
-        
-        int arr[] = {1 , 4 , 6 , 2 , 3};
+
+        int arr[] = { 10, 5, 3, 8, 2, 1, 4  };
 
         int len = arr.length;
         int product[] = new int[len];
@@ -34,9 +34,8 @@ public class Product_of_Array {
         product(arr, product, len);
 
         System.out.print("The product of array Except itself is: ");
-        for(int i=0;i<len;i++)
-        {
-            System.out.print(product[i]+", "); 
+        for (int i = 0; i < len; i++) {
+            System.out.print(product[i] + ", ");
         }
         System.out.println();
     }
