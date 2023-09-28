@@ -1,16 +1,14 @@
 package DSA;
+
 import java.util.Scanner;
 
 public class LinkedList_two {
-    
 
-        static class Node
-    {
+    static class Node {
         int data;
-        Node next ;
+        Node next;
 
-        public Node(int data)
-        {
+        public Node(int data) {
             this.data = data;
             this.next = null;
         }
@@ -19,82 +17,73 @@ public class LinkedList_two {
     Node head = null;
     Node tail = null;
 
-    // adding element ---
+    // Adding element -:---:-
 
-    public void addData (){
-       int data , n;
+    public void addData() {
+        int data, n;
 
-     do{
-         System.out.println("please enter the data --");
-     Scanner s = new Scanner(System.in);
-         data = s.nextInt();
-         Node newNode = new Node(data);
+        do {
+            System.out.println("please enter the data --");
+            Scanner s = new Scanner(System.in);
+            data = s.nextInt();
+           Node newNode = new Node(data);
 
-
-     if(head == null){
-         head = newNode;
-         tail = newNode;
-     }
-     else
-     {
-        tail.next = newNode;
-        tail = newNode;
-     }
-     System.out.println("Do you want add More data --- press 1");
-     n = s.nextInt();
-     }while (n == 1);
+            if (head == null) {
+                head = newNode;
+                tail = newNode;
+            } else {
+                tail.next = newNode;
+                tail = newNode;
+            }
+            System.out.println("Do you want add More data --- press 1");
+            n = s.nextInt();
+        } while (n == 1);
 
     }
 
-    public void traverse ()
-    {
+    public void traverse() {
         Node temp = head;
 
-        if (temp == null)
-        {//traverseing element ---
+        if (temp == null) {// traverseing element ---
             System.out.println("-- List is empty --");
-        }
-        else
-        {
-            while (temp != null ){
+        } else {
+            while (temp != null) {
                 System.out.print(temp.data + " ");
                 temp = temp.next;
             }
         }
     }
 
-    public void removeItem(){
+    public void removeItem() {
 
-        int ch , opt;
+        int ch, opt;
 
+        do {
 
-
-        do{
-
-            if (head == null){
+            if (head == null) {
                 System.out.println("please provide value first --");
 
-            }
-            else {
-                System.out.println("from which place you want to remove , for start press 1 , for end press 2 , or whatever you want press 3");
+            } else {
+                System.out.println(
+                        "from which place you want to remove , for start press 1 , for end press 2 , or whatever you want press 3");
                 Scanner sctt = new Scanner(System.in);
                 opt = sctt.nextInt();
-                switch (opt){
+                switch (opt) {
 
-                    case 1 :
+                    case 1:
                         Node ptr = head;
-                        Node ptr2=ptr.next;
+                        Node ptr2 = ptr.next;
 
-                        ptr = ptr.next;
+                        ptr = ptr.next; 
                         head = ptr;
 
                         break;
 
-                    case 2 :
-                        Node ptr3 =head;
-                        Node temp1=ptr3.next;
+                    case 2:
+                        Node ptr3 = head;
+                        Node temp1 = ptr3.next;
 
-                        while (temp1.next != null){
+                        while (temp1.next != null) {
                             ptr3 = temp1;
                             temp1 = temp1.next;
                         }
@@ -108,9 +97,9 @@ public class LinkedList_two {
                         pos = p.nextInt();
 
                         Node ptr4 = head;
-                        Node temp2=ptr4.next;
+                        Node temp2 = ptr4.next;
 
-                        for(int i =0; i <pos-2 ; i++){
+                        for (int i = 0; i < pos - 2; i++) {
                             ptr4 = temp2;
                             temp2 = temp2.next;
                         }
@@ -123,22 +112,17 @@ public class LinkedList_two {
             System.out.println("Do you want to delete more item --- press 2 ");
             Scanner s = new Scanner(System.in);
             ch = s.nextInt();
-        }while (ch == 3);
-
-
+        } while (ch == 3);
 
     }
 
-
     public static void main(String[] args) {
-        
+
         LinkedList_two ll2 = new LinkedList_two();
         ll2.addData();
         ll2.removeItem();
         ll2.traverse();
 
-
     }
-
 
 }

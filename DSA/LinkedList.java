@@ -32,6 +32,31 @@ public class LinkedList {
              tail = newNode;
          }
      }
+     // reverse LinkedList
+
+     public void reverse(){
+       /*   Node temp = head;
+         Node prev = null;
+         while(temp!= null){
+             Node next = temp.next;
+             temp.next = prev;
+             prev = temp;
+             temp = next;
+         }
+         head = prev;
+          */
+
+          Node temp = head;
+          Node prev = null;
+
+          while(temp !=null){
+            Node next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+          }
+          head = prev;
+     }
  
      // traverse the Linked List
  
@@ -60,6 +85,14 @@ public class LinkedList {
         ll.addnode(3);
         ll.addnode(4);
 
+        System.out.println("Normal list");
         ll.traverse();
+
+        System.out.println("Reverse String");
+        ll.reverse();
+        
+        
+
+        
      }
 }

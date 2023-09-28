@@ -4,6 +4,7 @@
     public class JsonFormatter {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter String --");
             String input = scanner.nextLine();
             String formattedJson = formatJson(input);
             System.out.println(formattedJson);
