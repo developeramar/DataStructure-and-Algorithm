@@ -43,6 +43,21 @@ public void reverse() {
     head = prev; // Update the head to the new first node
 }
 
+public boolean isSearch(int key){
+    Node currentNode = head;
+    while(currentNode != null){
+
+        if(currentNode.data == key){
+            return true;
+        }
+        currentNode = currentNode.next;
+    }
+
+    return false;
+
+
+}
+
 public void display(){
     Node curr = head;
     while(curr!= null){
@@ -67,6 +82,15 @@ public static void main(String[] args) {
      obj.reverse();
     System.out.println("Reverse Linkedlist");
    obj.display();
+
+   System.out.println();
+   int key = 5;
+   if(obj.isSearch(key)){
+    System.out.println("Key is Present ");
+   }
+   else{
+    System.out.println("Key is not Present ");
+   }
 
 
 
